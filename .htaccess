@@ -1,0 +1,8 @@
+# Redirect to HTML if it exists.
+# e.g. www.karouibilel.live/foo will display the contents of www.karouibilel.live/foo.html
+# e.g. karouibilel.live/foo will display the contents of karouibilel.live/foo.html
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
